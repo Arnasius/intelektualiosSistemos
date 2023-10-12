@@ -16,11 +16,12 @@ b = np.random.randn()
 n = 0.1
 num_examples = P.shape[1]
 e = np.inf
+iterations = 0
 
 # Training loop
 while e != 0:
     e = 0
-    
+    iterations += 1
     for i in range(num_examples):
         xi1 = P[0, i]
         xi2 = P[1, i]
@@ -41,6 +42,7 @@ while e != 0:
 print(f'Final w1: {w1}')
 print(f'Final w2: {w2}')
 print(f'Final b: {b}')
+print(f'Iterations: {iterations}')
 
 # Testing part
 x1_test = np.array([0.31565, 0.36484, 0.46111, 0.55223, 0.16975, 0.49187, 0.08838, 0.098166])
